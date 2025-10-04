@@ -31,18 +31,18 @@ const AdminDashboard = () => {
     <PageLayout role="admin">
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+          <h1 className="text-3xl font-bold text-foreground">Panel de Control</h1>
           <p className="text-muted-foreground mt-1">
-            Monitor and analyze NGO performance and project metrics
+            Monitoree y analice el desempeño de las ONGs y las métricas de los proyectos
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <Label htmlFor="ngo-select">Select NGO</Label>
+            <Label htmlFor="ngo-select">Seleccionar ONG</Label>
             <Select value={selectedNGO} onValueChange={setSelectedNGO}>
               <SelectTrigger id="ngo-select">
-                <SelectValue placeholder="Choose an NGO" />
+                <SelectValue placeholder="Elija una ONG" />
               </SelectTrigger>
               <SelectContent>
                 {ngos.map((ngo) => (
@@ -55,14 +55,14 @@ const AdminDashboard = () => {
           </div>
 
           <div>
-            <Label htmlFor="project-select">Select Project</Label>
+            <Label htmlFor="project-select">Seleccionar Proyecto</Label>
             <Select
               value={selectedProject}
               onValueChange={setSelectedProject}
               disabled={!selectedNGO}
             >
               <SelectTrigger id="project-select">
-                <SelectValue placeholder="Choose a project" />
+                <SelectValue placeholder="Elija un proyecto" />
               </SelectTrigger>
               <SelectContent>
                 {projects.map((project) => (
@@ -80,45 +80,45 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Total Projects</CardTitle>
+                  <CardTitle className="text-sm font-medium">Total de Proyectos</CardTitle>
                   <FolderOpen className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">12</div>
-                  <p className="text-xs text-muted-foreground">+2 from last month</p>
+                  <p className="text-xs text-muted-foreground">+2 desde el mes pasado</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Active Beneficiaries</CardTitle>
+                  <CardTitle className="text-sm font-medium">Beneficiarios Activos</CardTitle>
                   <Users className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">1,234</div>
-                  <p className="text-xs text-muted-foreground">+18% from last month</p>
+                  <p className="text-xs text-muted-foreground">+18% desde el mes pasado</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Impact Score</CardTitle>
+                  <CardTitle className="text-sm font-medium">Puntuación de Impacto</CardTitle>
                   <TrendingUp className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">87%</div>
-                  <p className="text-xs text-muted-foreground">+5% from last month</p>
+                  <p className="text-xs text-muted-foreground">+5% desde el mes pasado</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Goals Achieved</CardTitle>
+                  <CardTitle className="text-sm font-medium">Metas Logradas</CardTitle>
                   <Target className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">9/12</div>
-                  <p className="text-xs text-muted-foreground">75% completion rate</p>
+                  <p className="text-xs text-muted-foreground">75% tasa de finalización</p>
                 </CardContent>
               </Card>
             </div>
@@ -126,29 +126,29 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Recent Activity</CardTitle>
+                  <CardTitle>Actividad Reciente</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
                       <div className="w-2 h-2 bg-primary rounded-full" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium">New project created</p>
-                        <p className="text-xs text-muted-foreground">2 hours ago</p>
+                        <p className="text-sm font-medium">Nuevo proyecto creado</p>
+                        <p className="text-xs text-muted-foreground">Hace 2 horas</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-2 h-2 bg-success rounded-full" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium">Report submitted</p>
-                        <p className="text-xs text-muted-foreground">5 hours ago</p>
+                        <p className="text-sm font-medium">Informe enviado</p>
+                        <p className="text-xs text-muted-foreground">Hace 5 horas</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-2 h-2 bg-primary rounded-full" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium">Manager updated</p>
-                        <p className="text-xs text-muted-foreground">1 day ago</p>
+                        <p className="text-sm font-medium">Gerente actualizado</p>
+                        <p className="text-xs text-muted-foreground">Hace 1 día</p>
                       </div>
                     </div>
                   </div>
@@ -157,16 +157,16 @@ const AdminDashboard = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Focus Area Distribution</CardTitle>
+                  <CardTitle>Distribución de Áreas de Enfoque</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {[
-                      { area: "Education", percentage: 35 },
-                      { area: "Environment", percentage: 25 },
-                      { area: "Nutrition", percentage: 20 },
-                      { area: "Entrepreneurship", percentage: 15 },
-                      { area: "Gender Equity", percentage: 5 },
+                      { area: "Educación", percentage: 35 },
+                      { area: "Medio Ambiente", percentage: 25 },
+                      { area: "Nutrición", percentage: 20 },
+                      { area: "Emprendimiento", percentage: 15 },
+                      { area: "Equidad de Género", percentage: 5 },
                     ].map((item) => (
                       <div key={item.area} className="space-y-1">
                         <div className="flex items-center justify-between text-sm">
@@ -192,7 +192,7 @@ const AdminDashboard = () => {
           <Card>
             <CardContent className="flex items-center justify-center py-12">
               <p className="text-muted-foreground">
-                Select an NGO to view dashboard metrics
+                Seleccione una ONG para ver las métricas del panel
               </p>
             </CardContent>
           </Card>

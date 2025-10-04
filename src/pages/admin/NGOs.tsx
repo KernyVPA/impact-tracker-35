@@ -45,14 +45,14 @@ const AdminNGOs = () => {
     {
       id: "1",
       name: "BAQ",
-      manager: "Carlos Rodriguez",
+      manager: "Carlos Rodríguez",
       email: "carlos@baq.org",
       phone: "+593-2-234-5678",
     },
     {
       id: "2",
       name: "BAA Cuenca",
-      manager: "Ana Martinez",
+      manager: "Ana Martínez",
       email: "ana@baacuenca.org",
       phone: "+593-7-234-5678",
     },
@@ -85,16 +85,16 @@ const AdminNGOs = () => {
     setNgos(ngos.filter((n) => n.id !== id));
     setDeleteId(null);
     toast({
-      title: "NGO deleted",
-      description: "The NGO has been successfully removed.",
+      title: "ONG eliminada",
+      description: "La ONG ha sido eliminada exitosamente.",
     });
   };
 
   const handleCreate = () => {
     if (!formData.name || !formData.manager || !formData.email || !formData.phone) {
       toast({
-        title: "Missing fields",
-        description: "Please fill in all required fields.",
+        title: "Campos faltantes",
+        description: "Por favor complete todos los campos requeridos.",
         variant: "destructive",
       });
       return;
@@ -103,8 +103,8 @@ const AdminNGOs = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
+        title: "Correo inválido",
+        description: "Por favor ingrese una dirección de correo válida.",
         variant: "destructive",
       });
       return;
@@ -120,8 +120,8 @@ const AdminNGOs = () => {
     setFormData({ name: "", manager: "", email: "", phone: "" });
     
     toast({
-      title: "NGO created",
-      description: "The NGO has been successfully added.",
+      title: "ONG creada",
+      description: "La ONG ha sido agregada exitosamente.",
     });
   };
 
@@ -130,63 +130,63 @@ const AdminNGOs = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">NGOs</h1>
+            <h1 className="text-3xl font-bold text-foreground">ONGs</h1>
             <p className="text-muted-foreground mt-1">
-              Manage NGO organizations and their information
+              Gestione las organizaciones ONGs y su información
             </p>
           </div>
           <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
             <DialogTrigger asChild>
               <Button className="gap-2">
                 <Plus className="w-4 h-4" />
-                Create NGO
+                Crear ONG
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Create New NGO</DialogTitle>
+                <DialogTitle>Crear Nueva ONG</DialogTitle>
               </DialogHeader>
               <div className="space-y-4 py-4">
                 <div>
                   <Label htmlFor="ngoName">
-                    NGO Name <span className="text-destructive">*</span>
+                    Nombre de la ONG <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="ngoName"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Enter NGO name"
+                    placeholder="Ingrese el nombre de la ONG"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="manager">
-                    Manager Name <span className="text-destructive">*</span>
+                    Nombre del Gerente <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="manager"
                     value={formData.manager}
                     onChange={(e) => setFormData({ ...formData, manager: e.target.value })}
-                    placeholder="Enter manager name"
+                    placeholder="Ingrese el nombre del gerente"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="email">
-                    Email <span className="text-destructive">*</span>
+                    Correo Electrónico <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="email@example.com"
+                    placeholder="correo@ejemplo.com"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="phone">
-                    Phone <span className="text-destructive">*</span>
+                    Teléfono <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="phone"
@@ -199,7 +199,7 @@ const AdminNGOs = () => {
 
                 <div className="flex gap-3 pt-4">
                   <Button onClick={handleCreate} className="flex-1">
-                    Save NGO
+                    Guardar ONG
                   </Button>
                   <Button
                     variant="outline"
@@ -209,7 +209,7 @@ const AdminNGOs = () => {
                     }}
                     className="flex-1"
                   >
-                    Cancel
+                    Cancelar
                   </Button>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const AdminNGOs = () => {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input
-            placeholder="Search NGOs..."
+            placeholder="Buscar ONGs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -231,11 +231,11 @@ const AdminNGOs = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>NGO Name</TableHead>
-                <TableHead>Manager</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Phone</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead>Nombre de la ONG</TableHead>
+                <TableHead>Gerente</TableHead>
+                <TableHead>Correo</TableHead>
+                <TableHead>Teléfono</TableHead>
+                <TableHead className="text-right">Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -272,19 +272,19 @@ const AdminNGOs = () => {
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure you want to delete this NGO?</AlertDialogTitle>
+            <AlertDialogTitle>¿Está seguro de que desea eliminar esta ONG?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete the NGO
-              and all associated data.
+              Esta acción no se puede deshacer. Esto eliminará permanentemente la ONG
+              y todos los datos asociados.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => deleteId && handleDelete(deleteId)}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

@@ -8,14 +8,14 @@ interface SidebarProps {
 
 const Sidebar = ({ role }: SidebarProps) => {
   const ngoLinks = [
-    { to: "/ngo/login", label: "Login", icon: LogIn },
-    { to: "/ngo/projects", label: "Projects", icon: FolderOpen },
+    { to: "/ngo/login", label: "Inicio de Sesión", icon: LogIn },
+    { to: "/ngo/projects", label: "Proyectos", icon: FolderOpen },
   ];
 
   const adminLinks = [
-    { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { to: "/admin/ngos", label: "NGOs", icon: Building2 },
-    { to: "/admin/projects", label: "Projects", icon: FolderOpen },
+    { to: "/admin/dashboard", label: "Panel de Control", icon: LayoutDashboard },
+    { to: "/admin/ngos", label: "ONGs", icon: Building2 },
+    { to: "/admin/projects", label: "Proyectos", icon: FolderOpen },
   ];
 
   const links = role === "ngo" ? ngoLinks : adminLinks;
@@ -25,7 +25,7 @@ const Sidebar = ({ role }: SidebarProps) => {
       <div className="flex flex-col h-full">
         <div className="p-6 border-b border-sidebar-border">
           <h1 className="text-xl font-bold text-sidebar-foreground">
-            {role === "ngo" ? "NGO Portal" : "Admin Portal"}
+            {role === "ngo" ? "Portal ONG" : "Portal Administrador"}
           </h1>
         </div>
         
@@ -57,7 +57,7 @@ const Sidebar = ({ role }: SidebarProps) => {
             to="/"
             className="flex items-center justify-center px-4 py-2 text-sm text-sidebar-foreground hover:text-sidebar-primary transition-colors"
           >
-            Switch Role
+            Cambiar Rol
           </NavLink>
         </div>
       </div>

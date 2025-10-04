@@ -10,23 +10,23 @@ const NGOLogin = () => {
       <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl font-bold">NGO Login</CardTitle>
+            <CardTitle className="text-2xl font-bold">Inicio de Sesión ONG</CardTitle>
             <CardDescription>
-              Enter your credentials to access the NGO portal
+              Ingrese sus credenciales para acceder al portal de la ONG
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="name@organization.org" />
+                <Label htmlFor="email">Correo Electrónico</Label>
+                <Input id="email" type="email" placeholder="nombre@organizacion.org" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Contraseña</Label>
                 <Input id="password" type="password" placeholder="••••••••" />
               </div>
               <Button className="w-full" type="submit">
-                Sign In
+                Iniciar Sesión
               </Button>
             </form>
           </CardContent>

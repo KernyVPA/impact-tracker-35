@@ -47,21 +47,21 @@ const AdminProjects = () => {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: "1",
-      name: "Community Garden Initiative",
-      duration: "12 months",
+      name: "Iniciativa de Huertos Comunitarios",
+      duration: "12 meses",
       subscriptionDate: "2024-01-15",
-      reportingPeriod: "Monthly",
-      manager: "Maria Garcia",
+      reportingPeriod: "Mensual",
+      manager: "María García",
       email: "maria@example.com",
     },
     {
       id: "2",
-      name: "Youth Education Program",
-      duration: "18 months",
+      name: "Programa de Educación Juvenil",
+      duration: "18 meses",
       subscriptionDate: "2024-02-20",
-      reportingPeriod: "Quarterly",
-      manager: "John Smith",
-      email: "john@example.com",
+      reportingPeriod: "Trimestral",
+      manager: "Juan Pérez",
+      email: "juan@example.com",
     },
   ]);
 
@@ -78,18 +78,18 @@ const AdminProjects = () => {
   });
 
   const focusAreaOptions = [
-    "Environment",
-    "Nutrition",
-    "Education",
-    "Entrepreneurship",
-    "Gender Equity",
+    "Medio Ambiente",
+    "Nutrición",
+    "Educación",
+    "Emprendimiento",
+    "Equidad de Género",
   ];
 
   const indicatorOptions = [
-    "Number of beneficiaries",
-    "Resources distributed",
-    "Training sessions",
-    "Community engagement rate",
+    "Número de beneficiarios",
+    "Recursos distribuidos",
+    "Sesiones de capacitación",
+    "Tasa de participación comunitaria",
   ];
 
   const filteredProjects = projects.filter((project) =>
@@ -101,8 +101,8 @@ const AdminProjects = () => {
     setProjects(projects.filter((p) => p.id !== id));
     setDeleteId(null);
     toast({
-      title: "Project deleted",
-      description: "The project has been successfully removed.",
+      title: "Proyecto eliminado",
+      description: "El proyecto ha sido eliminado exitosamente.",
     });
   };
 
@@ -127,8 +127,8 @@ const AdminProjects = () => {
   const handleCreate = () => {
     if (!formData.name || !formData.duration) {
       toast({
-        title: "Missing fields",
-        description: "Please fill in all required fields.",
+        title: "Campos faltantes",
+        description: "Por favor complete todos los campos requeridos.",
         variant: "destructive",
       });
       return;
@@ -139,7 +139,7 @@ const AdminProjects = () => {
       name: formData.name,
       duration: formData.duration,
       subscriptionDate: new Date().toISOString().split("T")[0],
-      reportingPeriod: "Monthly",
+      reportingPeriod: "Mensual",
       manager: "Admin",
       email: "admin@example.com",
     };
@@ -156,8 +156,8 @@ const AdminProjects = () => {
     });
     
     toast({
-      title: "Project created",
-      description: "The project has been successfully added.",
+      title: "Proyecto creado",
+      description: "El proyecto ha sido agregado exitosamente.",
     });
   };
 
@@ -166,49 +166,49 @@ const AdminProjects = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">Projects</h1>
+            <h1 className="text-3xl font-bold text-foreground">Proyectos</h1>
             <p className="text-muted-foreground mt-1">
-              Manage all projects across NGO organizations
+              Gestione todos los proyectos de las organizaciones ONGs
             </p>
           </div>
           <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
             <DialogTrigger asChild>
               <Button className="gap-2">
                 <Plus className="w-4 h-4" />
-                Create Project
+                Crear Proyecto
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle>Create New Project</DialogTitle>
+                <DialogTitle>Crear Nuevo Proyecto</DialogTitle>
               </DialogHeader>
               <div className="space-y-6 py-4">
                 <div>
                   <Label htmlFor="projectName">
-                    Project Name <span className="text-destructive">*</span>
+                    Nombre del Proyecto <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="projectName"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Enter project name"
+                    placeholder="Ingrese el nombre del proyecto"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="duration">
-                    Project Duration <span className="text-destructive">*</span>
+                    Duración del Proyecto <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="duration"
                     value={formData.duration}
                     onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
-                    placeholder="e.g., 12 months"
+                    placeholder="ej., 12 meses"
                   />
                 </div>
 
                 <div>
-                  <Label>Focus Areas Covered</Label>
+                  <Label>Áreas de Enfoque Cubiertas</Label>
                   <div className="space-y-3 mt-2">
                     {focusAreaOptions.map((area) => (
                       <div key={area} className="flex items-center space-x-2">
@@ -231,11 +231,11 @@ const AdminProjects = () => {
                         }}
                       />
                       <Label htmlFor="focus-other" className="font-normal">
-                        Other
+                        Otro
                       </Label>
                       {formData.otherFocusArea !== undefined && (
                         <Input
-                          placeholder="Specify other focus area"
+                          placeholder="Especifique otra área de enfoque"
                           value={formData.otherFocusArea}
                           onChange={(e) =>
                             setFormData({ ...formData, otherFocusArea: e.target.value })
@@ -248,7 +248,7 @@ const AdminProjects = () => {
                 </div>
 
                 <div>
-                  <Label>Indicators</Label>
+                  <Label>Indicadores</Label>
                   <div className="space-y-3 mt-2">
                     {indicatorOptions.map((indicator) => (
                       <div key={indicator} className="flex items-center space-x-2">
@@ -274,11 +274,11 @@ const AdminProjects = () => {
                         }}
                       />
                       <Label htmlFor="indicator-other" className="font-normal">
-                        Other
+                        Otro
                       </Label>
                       {formData.otherIndicator !== undefined && (
                         <Input
-                          placeholder="Specify other indicator"
+                          placeholder="Especifique otro indicador"
                           value={formData.otherIndicator}
                           onChange={(e) =>
                             setFormData({ ...formData, otherIndicator: e.target.value })
@@ -292,7 +292,7 @@ const AdminProjects = () => {
 
                 <div className="flex gap-3 pt-4">
                   <Button onClick={handleCreate} className="flex-1">
-                    Save Project
+                    Guardar Proyecto
                   </Button>
                   <Button
                     variant="outline"
@@ -309,7 +309,7 @@ const AdminProjects = () => {
                     }}
                     className="flex-1"
                   >
-                    Cancel
+                    Cancelar
                   </Button>
                 </div>
               </div>
@@ -320,7 +320,7 @@ const AdminProjects = () => {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input
-            placeholder="Search projects..."
+            placeholder="Buscar proyectos..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -331,13 +331,13 @@ const AdminProjects = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Project Name</TableHead>
-                <TableHead>Duration</TableHead>
-                <TableHead>Subscription Date</TableHead>
-                <TableHead>Reporting Period</TableHead>
-                <TableHead>Project Manager</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead>Nombre del Proyecto</TableHead>
+                <TableHead>Duración</TableHead>
+                <TableHead>Fecha de Suscripción</TableHead>
+                <TableHead>Período de Reporte</TableHead>
+                <TableHead>Gerente del Proyecto</TableHead>
+                <TableHead>Correo</TableHead>
+                <TableHead className="text-right">Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -376,19 +376,19 @@ const AdminProjects = () => {
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure you want to delete this project?</AlertDialogTitle>
+            <AlertDialogTitle>¿Está seguro de que desea eliminar este proyecto?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete the project
-              and remove the data from our servers.
+              Esta acción no se puede deshacer. Esto eliminará permanentemente el proyecto
+              y eliminará los datos de nuestros servidores.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => deleteId && handleDelete(deleteId)}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

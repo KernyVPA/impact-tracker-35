@@ -9,11 +9,11 @@ const Index = () => {
       <div className="w-full max-w-4xl space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            NGO Management Platform
+            Plataforma de Gestión de ONGs
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Streamline project tracking, monitor impact, and manage NGO operations
-            with our comprehensive dashboard solution.
+            Optimice el seguimiento de proyectos, monitoree el impacto y gestione las operaciones
+            de ONGs con nuestra solución integral de panel de control.
           </p>
         </div>
 
@@ -23,15 +23,15 @@ const Index = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Building2 className="w-6 h-6 text-primary" />
               </div>
-              <CardTitle>NGO Portal</CardTitle>
+              <CardTitle>Portal ONG</CardTitle>
               <CardDescription>
-                Access your organization's projects, track indicators, and submit reports
+                Acceda a los proyectos de su organización, realice seguimiento de indicadores y envíe informes
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Link to="/ngo/projects">
                 <Button className="w-full">
-                  Enter NGO Portal
+                  Ingresar al Portal ONG
                 </Button>
               </Link>
             </CardContent>
@@ -42,15 +42,15 @@ const Index = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <CardTitle>Administrator Portal</CardTitle>
+              <CardTitle>Portal de Administrador</CardTitle>
               <CardDescription>
-                Manage NGOs, oversee all projects, and view comprehensive analytics
+                Gestione ONGs, supervise todos los proyectos y vea análisis completos
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Link to="/admin/dashboard">
                 <Button className="w-full">
-                  Enter Admin Portal
+                  Ingresar al Portal de Administrador
                 </Button>
               </Link>
             </CardContent>
@@ -59,7 +59,7 @@ const Index = () => {
 
         <div className="text-center space-y-2">
           <p className="text-sm text-muted-foreground">
-            Trusted by NGOs across Ecuador to track and manage their social impact projects
+            Confiado por ONGs en todo Ecuador para rastrear y gestionar sus proyectos de impacto social
           </p>
         </div>
       </div>

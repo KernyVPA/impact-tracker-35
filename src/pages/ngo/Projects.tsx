@@ -54,23 +54,23 @@ const NGOProjects = () => {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: "1",
-      name: "Community Garden Initiative",
-      duration: "12 months",
+      name: "Iniciativa de Huertos Comunitarios",
+      duration: "12 meses",
       subscriptionDate: "2024-01-15",
-      reportingPeriod: "Monthly",
-      manager: "Maria Garcia",
+      reportingPeriod: "Mensual",
+      manager: "María García",
       email: "maria@example.com",
-      focusArea: "Environment",
+      focusArea: "Medio Ambiente",
     },
     {
       id: "2",
-      name: "Youth Education Program",
-      duration: "18 months",
+      name: "Programa de Educación Juvenil",
+      duration: "18 meses",
       subscriptionDate: "2024-02-20",
-      reportingPeriod: "Quarterly",
-      manager: "John Smith",
-      email: "john@example.com",
-      focusArea: "Education",
+      reportingPeriod: "Trimestral",
+      manager: "Juan Pérez",
+      email: "juan@example.com",
+      focusArea: "Educación",
     },
   ]);
 
@@ -95,16 +95,16 @@ const NGOProjects = () => {
     setProjects(projects.filter((p) => p.id !== id));
     setDeleteId(null);
     toast({
-      title: "Project deleted",
-      description: "The project has been successfully removed.",
+      title: "Proyecto eliminado",
+      description: "El proyecto ha sido eliminado exitosamente.",
     });
   };
 
   const handleCreate = () => {
     if (!formData.name || !formData.manager || !formData.focusArea) {
       toast({
-        title: "Missing fields",
-        description: "Please fill in all required fields.",
+        title: "Campos faltantes",
+        description: "Por favor complete todos los campos requeridos.",
         variant: "destructive",
       });
       return;
@@ -113,9 +113,9 @@ const NGOProjects = () => {
     const newProject: Project = {
       id: Date.now().toString(),
       name: formData.name,
-      duration: "12 months",
+      duration: "12 meses",
       subscriptionDate: new Date().toISOString().split("T")[0],
-      reportingPeriod: "Monthly",
+      reportingPeriod: "Mensual",
       manager: formData.manager,
       email: "email@example.com",
       focusArea: formData.focusArea,
@@ -128,8 +128,8 @@ const NGOProjects = () => {
     setSelectedMonth("");
     
     toast({
-      title: "Project created",
-      description: "The project has been successfully added.",
+      title: "Proyecto creado",
+      description: "El proyecto ha sido agregado exitosamente.",
     });
   };
 
@@ -142,27 +142,27 @@ const NGOProjects = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="foodConsumption">Food suitable for consumption (Kg)</Label>
+                <Label htmlFor="foodConsumption">Alimentos aptos para consumo (Kg)</Label>
                 <Input id="foodConsumption" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="immediateFood">Food for immediate consumption (Kg)</Label>
+                <Label htmlFor="immediateFood">Alimentos para consumo inmediato (Kg)</Label>
                 <Input id="immediateFood" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="production">Production (Kg)</Label>
+                <Label htmlFor="production">Producción (Kg)</Label>
                 <Input id="production" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="totalReceived">Total kilos received in the month</Label>
+                <Label htmlFor="totalReceived">Total de kilos recibidos en el mes</Label>
                 <Input id="totalReceived" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="beneficiaries">Beneficiary Institutions (#)</Label>
+                <Label htmlFor="beneficiaries">Instituciones beneficiarias (#)</Label>
                 <Input id="beneficiaries" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="peopleFed">People fed monthly (#)</Label>
+                <Label htmlFor="peopleFed">Personas alimentadas mensualmente (#)</Label>
                 <Input id="peopleFed" type="number" placeholder="0" />
               </div>
             </div>
@@ -173,19 +173,19 @@ const NGOProjects = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="students">Number of students</Label>
+                <Label htmlFor="students">Número de estudiantes</Label>
                 <Input id="students" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="teachers">Number of teachers</Label>
+                <Label htmlFor="teachers">Número de profesores</Label>
                 <Input id="teachers" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="classrooms">Number of classrooms</Label>
+                <Label htmlFor="classrooms">Número de aulas</Label>
                 <Input id="classrooms" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="materials">Educational materials distributed</Label>
+                <Label htmlFor="materials">Materiales educativos distribuidos</Label>
                 <Input id="materials" type="number" placeholder="0" />
               </div>
             </div>
@@ -196,19 +196,19 @@ const NGOProjects = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="businesses">Businesses supported</Label>
+                <Label htmlFor="businesses">Negocios apoyados</Label>
                 <Input id="businesses" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="jobs">Jobs created</Label>
+                <Label htmlFor="jobs">Empleos creados</Label>
                 <Input id="jobs" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="training">Training sessions conducted</Label>
+                <Label htmlFor="training">Sesiones de capacitación realizadas</Label>
                 <Input id="training" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="revenue">Revenue generated ($)</Label>
+                <Label htmlFor="revenue">Ingresos generados ($)</Label>
                 <Input id="revenue" type="number" placeholder="0" />
               </div>
             </div>
@@ -219,19 +219,19 @@ const NGOProjects = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="treesPlanted">Trees planted</Label>
+                <Label htmlFor="treesPlanted">Árboles plantados</Label>
                 <Input id="treesPlanted" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="wasteCollected">Waste collected (Kg)</Label>
+                <Label htmlFor="wasteCollected">Residuos recolectados (Kg)</Label>
                 <Input id="wasteCollected" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="areaRestored">Area restored (m²)</Label>
+                <Label htmlFor="areaRestored">Área restaurada (m²)</Label>
                 <Input id="areaRestored" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="volunteers">Number of volunteers</Label>
+                <Label htmlFor="volunteers">Número de voluntarios</Label>
                 <Input id="volunteers" type="number" placeholder="0" />
               </div>
             </div>
@@ -242,19 +242,19 @@ const NGOProjects = () => {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="womenSupported">Women supported</Label>
+                <Label htmlFor="womenSupported">Mujeres apoyadas</Label>
                 <Input id="womenSupported" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="workshops">Workshops conducted</Label>
+                <Label htmlFor="workshops">Talleres realizados</Label>
                 <Input id="workshops" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="awareness">Awareness campaigns</Label>
+                <Label htmlFor="awareness">Campañas de concientización</Label>
                 <Input id="awareness" type="number" placeholder="0" />
               </div>
               <div>
-                <Label htmlFor="participants">Total participants</Label>
+                <Label htmlFor="participants">Total de participantes</Label>
                 <Input id="participants" type="number" placeholder="0" />
               </div>
             </div>
@@ -270,31 +270,31 @@ const NGOProjects = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">Projects</h1>
+            <h1 className="text-3xl font-bold text-foreground">Proyectos</h1>
             <p className="text-muted-foreground mt-1">
-              Manage your organization's projects and track progress
+              Gestione los proyectos de su organización y realice seguimiento del progreso
             </p>
           </div>
           <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
             <DialogTrigger asChild>
               <Button className="gap-2">
                 <Plus className="w-4 h-4" />
-                Create Project
+                Crear Proyecto
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle>Create New Project</DialogTitle>
+                <DialogTitle>Crear Nuevo Proyecto</DialogTitle>
               </DialogHeader>
               <div className="space-y-6 py-4">
                 <div>
-                  <Label htmlFor="month">Select Month</Label>
+                  <Label htmlFor="month">Seleccionar Mes</Label>
                   <Select value={selectedMonth} onValueChange={setSelectedMonth}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Choose month" />
+                      <SelectValue placeholder="Elegir mes" />
                     </SelectTrigger>
                     <SelectContent>
-                      {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((month) => (
+                      {["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"].map((month, index) => (
                         <SelectItem key={month} value={month.toLowerCase()}>
                           {month}
                         </SelectItem>
@@ -305,45 +305,45 @@ const NGOProjects = () => {
 
                 <div>
                   <Label htmlFor="projectName">
-                    Project Name <span className="text-destructive">*</span>
+                    Nombre del Proyecto <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="projectName"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Enter project name"
+                    placeholder="Ingrese el nombre del proyecto"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="projectManager">
-                    Project Manager <span className="text-destructive">*</span>
+                    Gerente del Proyecto <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="projectManager"
                     value={formData.manager}
                     onChange={(e) => setFormData({ ...formData, manager: e.target.value })}
-                    placeholder="Enter manager name"
+                    placeholder="Ingrese el nombre del gerente"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="focusArea">
-                    Focus Area <span className="text-destructive">*</span>
+                    Área de Enfoque <span className="text-destructive">*</span>
                   </Label>
                   <Select value={focusArea} onValueChange={(value) => {
                     setFocusArea(value);
                     setFormData({ ...formData, focusArea: value });
                   }}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select focus area" />
+                      <SelectValue placeholder="Seleccione el área de enfoque" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="nutrition">Nutrition</SelectItem>
-                      <SelectItem value="education">Education</SelectItem>
-                      <SelectItem value="entrepreneurship">Entrepreneurship</SelectItem>
-                      <SelectItem value="environment">Environment</SelectItem>
-                      <SelectItem value="gender">Gender Equity</SelectItem>
+                      <SelectItem value="nutrition">Nutrición</SelectItem>
+                      <SelectItem value="education">Educación</SelectItem>
+                      <SelectItem value="entrepreneurship">Emprendimiento</SelectItem>
+                      <SelectItem value="environment">Medio Ambiente</SelectItem>
+                      <SelectItem value="gender">Equidad de Género</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -353,13 +353,13 @@ const NGOProjects = () => {
                 <div className="pt-4 border-t">
                   <Button variant="outline" className="gap-2 w-full">
                     <Upload className="w-4 h-4" />
-                    Upload Files
+                    Subir Archivos
                   </Button>
                 </div>
 
                 <div className="flex gap-3 pt-4">
                   <Button onClick={handleCreate} className="flex-1">
-                    Save Project
+                    Guardar Proyecto
                   </Button>
                   <Button
                     variant="outline"
@@ -371,7 +371,7 @@ const NGOProjects = () => {
                     }}
                     className="flex-1"
                   >
-                    Cancel
+                    Cancelar
                   </Button>
                 </div>
               </div>
@@ -382,7 +382,7 @@ const NGOProjects = () => {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input
-            placeholder="Search projects..."
+            placeholder="Buscar proyectos..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -393,14 +393,14 @@ const NGOProjects = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Project Name</TableHead>
-                <TableHead>Duration</TableHead>
-                <TableHead>Subscription Date</TableHead>
-                <TableHead>Reporting Period</TableHead>
-                <TableHead>Project Manager</TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Focus Area</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead>Nombre del Proyecto</TableHead>
+                <TableHead>Duración</TableHead>
+                <TableHead>Fecha de Suscripción</TableHead>
+                <TableHead>Período de Reporte</TableHead>
+                <TableHead>Gerente del Proyecto</TableHead>
+                <TableHead>Correo</TableHead>
+                <TableHead>Área de Enfoque</TableHead>
+                <TableHead className="text-right">Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -444,19 +444,19 @@ const NGOProjects = () => {
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure you want to delete this project?</AlertDialogTitle>
+            <AlertDialogTitle>¿Está seguro de que desea eliminar este proyecto?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete the project
-              and remove the data from our servers.
+              Esta acción no se puede deshacer. Esto eliminará permanentemente el proyecto
+              y eliminará los datos de nuestros servidores.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => deleteId && handleDelete(deleteId)}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
